@@ -1,5 +1,5 @@
 import "./styles.css";
-import "./greeting.js";
+import "./location.js";
 
 
 /* Example for importing and using images
