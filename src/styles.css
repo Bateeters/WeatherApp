@@ -1,0 +1,20 @@
+body {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 50%;
+    height: 300px;
+    border-radius: 30px;
+    border: 1px solid #989898
+    ;
+}
