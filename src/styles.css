@@ -13,8 +13,13 @@ body {
     align-items: center;
     background-color: white;
     width: 50%;
-    height: 300px;
+    min-height: 300px;
     border-radius: 30px;
     border: 1px solid #989898
     ;
+}
+
+.weatherIcon {
+    margin: 50px;
+    width: 150px;
 }

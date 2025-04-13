@@ -26,38 +26,46 @@ searchBar.appendChild(locationInput);
 searchBar.appendChild(date1Input);
 searchBar.appendChild(searchBtn);
 
+
 export { mainDiv, greeting, locationInput }
 
 const api_key = '3FDTEH9BZ4R2GC3DZQEXQR3AQ';
 
-function testingInput(){
+// Module-level variable to hold the weather data
+let data = null;
+
+// Export the variable so other modules can read it
+export { data };
+
+export async function getLocation() {
     let location = locationInput.value;
     let date1 = date1Input.value;
-    console.log(location, date1);
-}
 
-async function getLocation() {
-    let location = locationInput.value;
-    let date1 = date1Input.value;
+    if (location != '') {
+        const baseUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline`;
+        const url = date1 === '' 
+            ? `${baseUrl}/${location}/?key=${api_key}`
+            : `${baseUrl}/${location}/${date1}/?key=${api_key}`;
 
-    if (location != '' ){
-        if (date1 == '') {
-            const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/?key=${api_key}`);
-            const locationData = await response.json()
-            console.log(`${location} no date supplied.`);
-            console.log(locationData.currentConditions.datetime);
-            console.log(locationData.currentConditions.feelslike);
-        } else if (date1 != ''){
-            const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${date1}/?key=${api_key}`);
-            const locationData = await response.json();
-            console.log(`${location}, date supplied and was ${date1}.`);
-            console.log(locationData.days[0].datetime);
-            console.log(locationData.days[0].feelslike);
-            
-        }
+        const response = await fetch(url);
+        const locationData = await response.json();
+        
+        // Update the exported variable
+        data = date1 === '' 
+            ? locationData.currentConditions 
+            : locationData.days[0];
+
+        // Update the UI
+        const weatherImg = document.createElement('img');
+        document.querySelectorAll(".weatherIcon").forEach(icon => icon.remove());
+
+        weatherImg.classList.add("weatherIcon");
+        weatherImg.src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Color/${data.icon}.svg`;
+        mainDiv.appendChild(weatherImg);
+
+        console.log(data)
+        return data;
     } else {
         alert('Please enter a location');
     }
 }
-
-export { getLocation, testingInput }
