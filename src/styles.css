@@ -6,6 +6,18 @@ body {
     background-color: whitesmoke;
 }
 
+.hidden {
+    display: none;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.p-40 {
+    padding: 40px;
+}
+
 #mainDiv {
     display: flex;
     flex-direction: column;
@@ -15,11 +27,33 @@ body {
     width: 50%;
     min-height: 300px;
     border-radius: 30px;
-    border: 1px solid #989898
-    ;
+    border: 1px solid #989898;
+    overflow: hidden;
+    z-index: 0;
 }
 
 .weatherIcon {
     margin: 50px;
     width: 150px;
+}
+
+#searchBar,
+#weatherContainer {
+    z-index: 1;
+}
+
+#image {
+    filter: invert(1);
+    width: 500px;
+    height: 420px;
+    position: relative;
+    top: -180px;
+    left: -120px;
+    z-index: -1;
+    display: none;
+    opacity: .65;
+}
+
+#imageContainer {
+    height:0;
 }
