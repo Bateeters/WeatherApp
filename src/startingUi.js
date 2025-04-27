@@ -19,9 +19,6 @@ const searchBtn = document.createElement('button');
 searchBtn.textContent = 'Search';
 searchBtn.id = 'search';
 
-const weatherContainer = document.createElement('div');
-weatherContainer.id = 'weatherContainer';
-
 const imageContainer = document.createElement('div');
 imageContainer.id = 'imageContainer';
 const image = document.createElement('img');
@@ -57,6 +54,9 @@ const hiLoTemp = document.createElement('h2');
 hiLoTemp.id = 'hiLoTemp';
 hiLoTemp.classList.add('hidden');
 
+const precipDiv = document.createElement('div');
+precipDiv.id = 'precipDiv';
+precipDiv.classList.add('hidden');
 
 /* precipitation probability */
 const precipProb = document.createElement('h1');
@@ -77,6 +77,8 @@ cloudCover.classList.add('hidden');
 const wind = document.createElement('h2');
 wind.id = 'wind';
 wind.classList.add('hidden');
+
+
 
 
 /* sunrise / sunset */
@@ -104,7 +106,7 @@ mainDiv.append(locationText);
 mainDiv.append(dateText);
 mainDiv.append(tempDiv);
 tempDiv.append(avgTemp, conditions, realFeel, hiLoTemp);
-mainDiv.appendChild(weatherContainer);
+mainDiv.appendChild(precipDiv);
 mainDiv.appendChild(imageContainer);
 
 
@@ -112,6 +114,9 @@ imageContainer.appendChild(image);
 searchBar.appendChild(locationInput);
 searchBar.appendChild(date1Input);
 searchBar.appendChild(searchBtn);
+
+mainDiv.appendChild(precipDiv);
+precipDiv.appendChild(precipProb, humidity, cloudCover, wind);
 
 
 export { mainDiv, locationInput }
