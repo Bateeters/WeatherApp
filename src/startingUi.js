@@ -57,9 +57,6 @@ const hiLoTemp = document.createElement('h2');
 hiLoTemp.id = 'hiLoTemp';
 hiLoTemp.classList.add('hidden');
 
-const testDiv = document.createElement('h3');
-testDiv.id = 'testDiv'
-testDiv.classList.add('hidden');
 
 /* precipitation probability */
 const precipProb = document.createElement('h1');
@@ -110,7 +107,7 @@ tempDiv.append(avgTemp, conditions, realFeel, hiLoTemp);
 mainDiv.appendChild(weatherContainer);
 mainDiv.appendChild(imageContainer);
 
-mainDiv.append(testDiv);
+
 imageContainer.appendChild(image);
 searchBar.appendChild(locationInput);
 searchBar.appendChild(date1Input);
