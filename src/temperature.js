@@ -5,16 +5,17 @@ export function getTemp(data, dateSupplied) {
     tempDiv.classList.remove('hidden');
 
     const avgTemp = document.querySelector('#avgTemp');
+    const realFeel = document.querySelector('#realFeel');
     avgTemp.classList.remove('hidden');
 
     if (dateSupplied != true) {
-        const realFeel = document.querySelector('#realFeel');
         realFeel.classList.remove('hidden');
         let currentTemp = Math.round(data.temp);
         let feelsLike = Math.round(data.feelslike);
         avgTemp.textContent =  `${currentTemp}\u00B0C`;
         realFeel.textContent = `feels like ${feelsLike}\u00B0C`
     } else {
+        realFeel.classList.add('hidden');
         let avg = Math.round(data.temp);
         avgTemp.textContent = `Avg Temp: ${avg}\u00B0C`;
     }

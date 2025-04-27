@@ -58,12 +58,11 @@ const precipDiv = document.createElement('div');
 precipDiv.id = 'precipDiv';
 precipDiv.classList.add('hidden');
 
-/* precipitation probability */
+
 const precipProb = document.createElement('h1');
 precipProb.id = 'precipProb';
 precipProb.classList.add('hidden');
 
-/* humidity */
 const humidity = document.createElement('h4');
 humidity.id = 'humidity';
 humidity.classList.add('hidden');
@@ -74,29 +73,32 @@ cloudCover.id = 'cloudCover';
 cloudCover.classList.add('hidden');
 
 /* wind */
+const windDiv = document.createElement('div');
+windDiv.id = 'windDiv';
+windDiv.classList.add('hidden');
 const wind = document.createElement('h2');
 wind.id = 'wind';
-wind.classList.add('hidden');
-
-
+const windArrow = document.createElement('h2');
+windArrow.style.width = '20px';
+windArrow.textContent = '>';
+windArrow.id = 'windArrow';
 
 
 /* sunrise / sunset */
 const sunRiseSet = document.createElement('h2');
 sunRiseSet.id = 'sunRiseSet';
-sunRiseSet.classList.add('sunRiseSet');
-
+sunRiseSet.classList.add('hidden');
 
 
 /* uv index */
 const uvIndex = document.createElement('h3');
 uvIndex.id = 'uvIndex';
-uvIndex.classList.add('uvIndex');
+uvIndex.classList.add('hidden');
 
 /* visibility */
 const visiblity = document.createElement('h3');
 visiblity.id = 'visiblity';
-visiblity.classList.add('visiblity');
+visiblity.classList.add('hidden');
 
 
 
@@ -116,7 +118,8 @@ searchBar.appendChild(date1Input);
 searchBar.appendChild(searchBtn);
 
 mainDiv.appendChild(precipDiv);
-precipDiv.appendChild(precipProb, humidity, cloudCover, wind);
+precipDiv.append(precipProb, humidity, cloudCover, windDiv);
+windDiv.append(windArrow, wind);
 
 
 export { mainDiv, locationInput }
