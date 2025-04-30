@@ -40,39 +40,29 @@ tempDiv.classList.add('hidden');
 
 const avgTemp = document.createElement('h1');
 avgTemp.id = 'avgTemp';
-avgTemp.classList.add('hidden');
 
 const conditions = document.createElement('h4');
 conditions.id = 'conditions';
-conditions.classList.add('hidden');
 
 const realFeel = document.createElement('h2');
 realFeel.id = 'realFeel';
-realFeel.classList.add('hidden');
 
 const hiLoTemp = document.createElement('h2');
 hiLoTemp.id = 'hiLoTemp';
-hiLoTemp.classList.add('hidden');
 
 const precipDiv = document.createElement('div');
 precipDiv.id = 'precipDiv';
 precipDiv.classList.add('hidden');
 
-
 const precipProb = document.createElement('h1');
 precipProb.id = 'precipProb';
-precipProb.classList.add('hidden');
 
 const humidity = document.createElement('h4');
 humidity.id = 'humidity';
-humidity.classList.add('hidden');
 
-/* cloud cover */
 const cloudCover = document.createElement('h2');
 cloudCover.id = 'cloudCover';
-cloudCover.classList.add('hidden');
 
-/* wind */
 const windDiv = document.createElement('div');
 windDiv.id = 'windDiv';
 windDiv.classList.add('hidden');
@@ -83,22 +73,22 @@ windArrow.style.width = '20px';
 windArrow.textContent = '>';
 windArrow.id = 'windArrow';
 
+const sunDiv = document.createElement('div');
+sunDiv.id = 'sunDiv'
+sunDiv.classList.add('hidden');
 
-/* sunrise / sunset */
-const sunRiseSet = document.createElement('h2');
-sunRiseSet.id = 'sunRiseSet';
-sunRiseSet.classList.add('hidden');
 
+const miscInfoDiv = document.createElement('div');
+miscInfoDiv.id = 'miscInfoDiv';
+miscInfoDiv.classList.add('hidden');
 
 /* uv index */
 const uvIndex = document.createElement('h3');
 uvIndex.id = 'uvIndex';
-uvIndex.classList.add('hidden');
 
 /* visibility */
 const visiblity = document.createElement('h3');
 visiblity.id = 'visiblity';
-visiblity.classList.add('hidden');
 
 
 
@@ -120,6 +110,11 @@ searchBar.appendChild(searchBtn);
 mainDiv.appendChild(precipDiv);
 precipDiv.append(precipProb, humidity, cloudCover, windDiv);
 windDiv.append(windArrow, wind);
+
+mainDiv.appendChild(sunDiv);
+
+mainDiv.appendChild(miscInfoDiv);
+miscInfoDiv.append(uvIndex, visiblity);
 
 
 export { mainDiv, locationInput }
