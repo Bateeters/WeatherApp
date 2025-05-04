@@ -12,12 +12,12 @@ export function getTemp(data, dateSupplied) {
         realFeel.classList.remove('hidden');
         let currentTemp = Math.round(data.temp);
         let feelsLike = Math.round(data.feelslike);
-        avgTemp.textContent =  `${currentTemp}\u00B0C`;
-        realFeel.textContent = `feels like ${feelsLike}\u00B0C`
+        avgTemp.textContent =  `${currentTemp}\u00B0F`;
+        realFeel.textContent = `feels like ${feelsLike}\u00B0F`
     } else {
         realFeel.classList.add('hidden');
         let avg = Math.round(data.temp);
-        avgTemp.textContent = `Avg Temp: ${avg}\u00B0C`;
+        avgTemp.textContent = `Avg Temp: ${avg}\u00B0F`;
     }
 };
 
@@ -28,5 +28,5 @@ export function highLowTemps(data) {
     let highOf = Math.round(data.tempmax);
     let lowOf = Math.round(data.tempmin);
 
-    hiLoTemp.textContent = `${highOf}\u00B0C / ${lowOf}\u00B0C`;
+    hiLoTemp.textContent = `${highOf}\u00B0F / ${lowOf}\u00B0F`;
 }
