@@ -22,6 +22,10 @@ export function getSun(data) {
     const sunLine = document.createElement('hr');
     sunLine.id = 'sunLine';
 
+    const sunDisclaimer = document.createElement('p');
+    sunDisclaimer.id = 'sunDisclaimer';
+    sunDisclaimer.innerText = `*Times shown are set to your machine's timezone.*`;
+
     
     const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
 
@@ -43,16 +47,16 @@ export function getSun(data) {
     
 
     sunRise.innerHTML = `
-    <h3>Sunrise</h3
-    <h4>${convertedSRTime}</h4>
+    <h4>Sunrise:</h4>
+    <h2>${convertedSRTime}</h2>
     `;
 
     sunSet.innerHTML = `
-    <h3>Sunset</h3>
-    <h4>${convertedSSTime}</h4>
+    <h4>Sunset:</h4>
+    <h2>${convertedSSTime}</h2>
     `;
     
 
     sunDiv.appendChild(sunRiseSet);
-    sunRiseSet.append(sunRise, sunLine, sunSet);
+    sunRiseSet.append(sunRise, sunLine, sunSet, sunDisclaimer);
 }

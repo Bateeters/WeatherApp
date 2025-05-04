@@ -1,5 +1,10 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
 body {
-    height: 80vh;
+    margin-top: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,14 +25,14 @@ body {
 
 #mainDiv {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
     align-items: center;
     background-color: white;
     width: 50%;
-    min-height: 300px;
     border-radius: 30px;
-    border: 1px solid #989898;
+    border: 1px solid #888888;
     overflow: hidden;
     z-index: 0;
 }
@@ -35,6 +40,26 @@ body {
 .weatherIcon {
     margin: 50px;
     width: 150px;
+}
+
+#searchBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+#searchBar * {
+    height: 25px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 40%;
+    border: 1px solid #888888;
+}
+
+#search {
+    width: 15%;
+    height: 40px;
 }
 
 #searchBar,
@@ -47,13 +72,99 @@ body {
     width: 390px;
     height: 420px;
     position: relative;
-    top: -470px;
-    left: -170px;
+    top: -530px;
+    right: -360px;
     z-index: -1;
     display: none;
-    opacity: .65;
+    opacity: .5;
 }
 
 #imageContainer {
     height:0;
 }
+
+#locationText,
+#dateText,
+#sunDiv {
+    width: 100%;
+}
+
+#sunDiv {
+    margin: 20px 0;
+}
+
+#locationText,
+#dateText {
+    text-align: center;
+}
+
+#dateText {
+    margin-top: 0;
+}
+
+#tempDiv {
+    margin-left: 15%;
+    width: 30%;
+    margin-bottom: 10px
+}
+#precipDiv {
+    width: 35%;
+    margin-right: 7%;
+    margin-bottom: 10px;
+}
+
+#tempDiv *,
+#precipDiv * {
+    margin: 10px 0 0 0;
+}
+
+#windDiv {
+    display: flex;
+}
+
+#wind {
+    margin: 0 0 0 20px;
+}
+#windArrow {
+    margin: 0;
+}
+
+#sunRiseSet,
+#miscInfoDiv {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#sunLine {
+    width: 40%;
+    height: 0;
+    margin: auto 0;
+    opacity: 1;
+    border:1px solid;
+}
+
+#sunRise h2,
+#sunSet h2,
+#uvIndex h2,
+#visibility h2 {
+    margin-top:0;
+}
+
+#sunRise h4,
+#sunSet h4,
+#uvIndex h4,
+#visibility h4 {
+    margin: 10px 0;
+}
+
+#sunDisclaimer {
+    text-align: center;
+    width: 100%;
+}
+
+
+
+

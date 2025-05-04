@@ -11,7 +11,6 @@ export function getWind(data) {
     windArrow.style.rotate = `${windDirection}deg`;
 
     let windSpeed = Math.round(data.windspeed);
-    console.log(data.winddir)
     if (20 <= data.winddir && data.winddir < 70){
         wind.textContent = `NE at ${windSpeed} MPH`;
     } else if (70 <= data.winddir && data.winddir < 115){

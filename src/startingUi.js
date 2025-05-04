@@ -80,15 +80,14 @@ sunDiv.classList.add('hidden');
 
 const miscInfoDiv = document.createElement('div');
 miscInfoDiv.id = 'miscInfoDiv';
-miscInfoDiv.classList.add('hidden');
 
 /* uv index */
-const uvIndex = document.createElement('h3');
+const uvIndex = document.createElement('div');
 uvIndex.id = 'uvIndex';
 
 /* visibility */
-const visiblity = document.createElement('h3');
-visiblity.id = 'visiblity';
+const visibility = document.createElement('div');
+visibility.id = 'visibility';
 
 
 
@@ -99,10 +98,8 @@ mainDiv.append(dateText);
 mainDiv.append(tempDiv);
 tempDiv.append(avgTemp, conditions, realFeel, hiLoTemp);
 mainDiv.appendChild(precipDiv);
-mainDiv.appendChild(imageContainer);
 
 
-imageContainer.appendChild(image);
 searchBar.appendChild(locationInput);
 searchBar.appendChild(date1Input);
 searchBar.appendChild(searchBtn);
@@ -114,7 +111,10 @@ windDiv.append(windArrow, wind);
 mainDiv.appendChild(sunDiv);
 
 mainDiv.appendChild(miscInfoDiv);
-miscInfoDiv.append(uvIndex, visiblity);
+miscInfoDiv.append(uvIndex, visibility);
+
+mainDiv.appendChild(imageContainer);
+imageContainer.appendChild(image);
 
 
 export { mainDiv, locationInput }
